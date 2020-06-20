@@ -2,15 +2,117 @@
 <html>
   <head>
     <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Soccer</title>
   <meta name="author" content="name">
   <meta name="description" content="description here">
   <meta name="keywords" content="keywords,here">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/float.css" type="text/css">
   </head>
   <body>
+    <div class="wrap">
+      <header>
+        <div id="navbar" class="nav container sticky">
+          <ul class="left-list">
+            <li><a href="./flexbox.html">Soccer with flexbox</a></li>
+          </ul>
+          <ul id="right-list" class="right-list">
+            <li><a id="right-list-icon" href="javascript:void(0);" class="icon"><i class="fa fa-bars"></i></a></li>
+            <li><a href="#messi-section">Lionel Messi</a></li>
+            <li><a href="#crespo-section">Hernan Crespo</a></li>
+            <li><a href="#gerrard-section">Steven Gerrard</a></li>
+            <li><a href="#suarez-section">Luis Suarez</a></li>
+            <li><a href="#veron-section">Juan Sebastian Veron</a></li>
+            <li><img src="./img/icon.jpg" alt="not found" class="user-icon"></li>
+          </ul>
+        </div>
+      </header>
+      <div class="container-intro">
+        <div class="intro">
+          <h1 class="main-title">The Beautiful Game: Football</h1>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row-messi-left clearfix" id="messi-section">
+          <h1>Lionel Messi: The Greatest Ever</h1>
+          <img id="messi-celebration" src="./img/messi_celebration.jpg" alt="" class="">
+          <p>Lionel Messi is considered the greatest soccer player of all time. Messi has scored more than 700 goals for both Barcelona and the Argentina national team, has won 34 club trophies, and has six Ballon D'Ors. Aside from the stats, his style of play will take your breath away! </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row-crespo-right clearfix" id="crespo-section">
+          <h1>Hernan Crespo: Lethal Goal Poacher</h1>
+          <img id="messi-celebration" src="./img/hernan_crespo.jpg" alt="" class="">
+          <p>Hernan Crespo is one of the best goal scorers of all time! Crespo has scored 273 goals for club and country and won titles with Chelsea, Inter, A.C. Milan to name a few! My favorite goals of his were the ones during the 2006 Fifa World Cup against Ivory Coast, Serbia and Montenegro, and Mexico. Crespo was my favorite player growing up and he always will be! </p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row-gerrard-left clearfix" id="gerrard-section">
+          <h1>Steven Gerrard: Liverpool's Chosen Son</h1>
+          <img id="gerrard-celebration" src="./img/steven_gerrard.jpg" alt="" class="">
+          <p>What is there to say about Steven Gerrard. Liverpool born and bred. Made 710 appearances for the Reds and scored 186 goals for them. Scored crucial goals when Liverpool needed it such as the 2004 Champions League Final, 2006 FA Cup Final, and the volley against Olympiacos that prevented Liverpool from being knocked out of the champions league. I've been a huge fan of his since I was 12! YNWA!</p>
+        </div>
+      </div>
+      <div class="container">
+          <div class="in-table" id="suarez-section">
+            <h1>Luis Suarez: El Pistolero</h1>
+            <img src="./img/suarez.jpg" alt="" class="table-image">
+            <p>Luis Suarez is one of the deadliest and lethal goal scorers the world has ever seen. He has scored at least 50 goals during his time at Ajax, Liverpool FC, FC Barcelona and the Uruguayn national team. What makes Suarez so special isn't just the number of goals he's scored, but the goalazos he's made. He's one of my favorite players of all time! 
+            </p>
+          </div>
+          <div class="in-table" id="veron-section">
+            <h1>Juan Sebastian Veron: La Brujita</h1>
+            <img src="./img/veron.jpg" alt="" class="table-image">
+            <p>Juan Sebastian Veron is a magical player that hasn't gotten a lot of credit. His time at Manchester United and Chelsea were less than expected, but his playing style is what sets him a part from everyone else. He's tall, strong, fast, and great with the ball. He is known for his long passes that can find his teammates in any position. I love Veron!</p>
+          </div>
+      </div>
+      <footer>
+        <div class="footer container">
+          <i class="fas fa-futbol"></i>
+          <ul class="footer-list">
+            <li class="footer-link"><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+            <li class="footer-link"><a href="#"><i class="fab fa-instagram-square"></i></a></li>
+            <li class="footer-link"><a href="#"><i class="fab fa-twitter"></i></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="https://kit.fontawesome.com/3b8deca2a0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      const nav = document.getElementById("navbar");
+      const right_list = document.getElementById("right-list");
+      const right_list_icon = document.getElementById("right-list-icon");
 
-  <script src="index.js" type="text/javascript"></script>
+      window.onscroll = function () {
+        if (window.pageYOffset > 100) {
+          nav.style.transition = "0.5s";
+          nav.style.background = "#f9f0ea";
+        } else {
+          nav.style.transition = "0.5s";
+          nav.style.background = "transparent";
+        }
+      }
+
+      if (performance.navigation.type == 1) {
+        if (window.pageYOffset > 100) {
+          nav.style.transition = "none";
+          nav.style.background = "#f9f0ea";
+        } else {
+          nav.style.transition = "none";
+          nav.style.background = "transparent";
+        }
+      }
+
+      right_list_icon.addEventListener('click', () => {
+        if (right_list.className === "right-list") {
+          right_list.className += " responsive";
+        } else {
+          right_list.className = "right-list";
+        }
+      });
+
+    </script>
   </body>
 </html>
